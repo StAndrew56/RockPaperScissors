@@ -3,99 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <title>Rock, Paper, Scissors</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
 </head>
-<body>
-    <button id="button" onclick="playGame()">Play</button>
+<body class="margin0">
+    <h1>Rock Paper Scissors</h1>
+
+    <div id="scoreboard">
+        <div class="playerScore">Player Score
+            <div class="score1"><p>0</p></div>
+        </div>
+        
+        <div class="computerScore">Computer Score
+            <div class="score2"> <p>0</p></div>
+        </div>
+
+    </div>
+
+    
+    <h2 id="winner">Who will come out on top?</h2>
+    <div id="container">
+        <div class="player"><img src="images/rock.png"></div>
+        <div class="vs"><img src="/images/vs.jpg" alt=""></div>
+        <div class="computer"><img src="images/rock.png"></div>
+    </div>
+    
+    <p id ="five_games"> Make your choice!</p>
+    <div id="choices">  
+        <button onclick="playGame(0)">Rock</button>
+        <button onclick="playGame(1)">Paper</button>
+        <button onclick="playGame(2)">Scissors</button>
+    </div>
+
+    <!--<button id="button" onclick="playGame()">Play</button> -->
+
 </body>
-<script>
-
-let humanScore = 0;
-let computerScore = 0;
-let totalGames = 0;
-
-function playGame(){
-    if(totalGames < 5){
-        playRound(getHumanChoice(), getComputerGuess());
-        totalGames++;
-    }
-    else{
-        console.log(humanScore + " Your Score!\n" + computerScore + " Computer Score!\n");
-        document.getElementById("button").innerHTML = ("Game Over");
-    }
-    return;
-}
-
-function getComputerGuess(){
-    let compChoice = Math.floor(Math.random() * 3);
-    return compChoice;
-}
-
-function getHumanChoice(){
-    let choice = prompt("Please Enter A Choice: \nRock\nPaper\nScissors");
-    choice = choice.toLowerCase();
-    switch(choice){
-        case "rock": 
-            return 0;
-            break;
-        case "paper":
-            return 1;
-            break;
-        case "scissors":
-            return 2;
-            break;
-        default:
-            return "Not valid input";
-    }
-    return choice;
-}
-
-function playRound(users_Choice, computers_Guess){
-
-    // 0 = Rock
-    // 1 = Paper
-    // 2 = Scissors
-
-    if(users_Choice == computers_Guess){
-        console.log("IT'S A TIE!");
-    }
-    else if(users_Choice == 0 && computers_Guess ==1){
-        console.log("You Lose!");
-        computerScore++;
-    }
-    else if(users_Choice == 0 && computers_Guess ==2){
-        console.log("You Win!");
-        humanScore++;
-    }
-    else if(users_Choice == 1 && computers_Guess ==0){
-        console.log("You Win!");
-        humanScore++;
-    }
-    else if(users_Choice == 1 && computers_Guess ==2){
-        console.log("You Lose!");
-        computerScore++;
-    }
-    else if(users_Choice == 2 && computers_Guess ==0){
-        console.log("You Lose!");
-        computerScore++;
-    }
-    else if(users_Choice == 2 && computers_Guess ==1){
-        console.log("You Win!");
-        humanScore++;
-    }
-}
 
 
-
-
-</script>
-
-<style>
-
-#button{
-    display: block;
-    margin: auto;
-    margin-top: 361px;;
-}   
-
-</style>
 </html>

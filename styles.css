@@ -1,0 +1,89 @@
+.margin0{
+    margin: 0px;
+}
+h1{
+    text-align: center;
+    border: 2px solid black;
+    background-color: black;
+    color: white;
+    margin-top: 0px;
+}
+
+h2{
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 50px;
+    color: white;
+}
+
+
+#scoreboard{
+    display: flex;
+    justify-content: center;
+    gap: 300px;
+    margin: auto;
+    margin-bottom: 100px;
+}
+
+
+
+#scoreboard .playerScore, 
+#scoreboard .computerScore {
+    text-align: center;
+    line-height: 40px;
+    font-family: monospace;
+    font-size: 24px;
+}
+
+
+
+#container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    height: 200px;
+    background-color: black;
+}
+
+img{
+    width: 250px;
+    height: auto;
+}
+
+#container .player,
+#container .vs,
+#container .computer{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    width: 450px;
+    height: 180px;
+    padding: 10px;
+
+}
+
+#container .player{
+    background-color: red;
+}
+#container .computer{
+    background-color: blue;
+}
+
+p{
+    text-align: center;
+    font-size: 24px;
+}
+
+#choices{
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+}
+button{
+    padding: 15px;
+    width: 100px;
+    background-color: rgb(0, 0, 255);
+    border-radius: 10px;
+    cursor: pointer;
+}
